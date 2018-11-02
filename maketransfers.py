@@ -31,7 +31,8 @@ def makeTransactions(transaction):
         acc_name = transaction[2]
         amount = transaction[3]
         narration = transaction[4]
-        if debitAccount(DEBITACC): 
+        if debitAccount(DEBITACC):
+	    debit_result = True
             credit_result = creditAccount(acc_number)
         else:
             debit_result = False
