@@ -74,7 +74,7 @@ if __name__=='__main__':
                         print(f'Column names are {", ".join(row)}')
                         line_count += 1
                     #validate the information
-                    elif(len(row[0]) == 3 and row[0].isdigit() and len(row[1]) == 10 and row[1].isdigit() and row[3].isdigit() and row[3] < max_amount and row[3] > min_amount):
+                    elif(len(row[0]) == 3 and row[0].isdigit() and len(row[1]) == 10 and row[1].isdigit() and row[3].isdigit() and int(row[3]) < int(max_amount) and int(row[3]) > int(min_amount)):
                         bank_code = row[0]
                         acc_number = row[1]
                         acc_name = row[2]
