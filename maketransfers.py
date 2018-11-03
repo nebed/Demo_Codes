@@ -20,7 +20,7 @@ args = vars(ap.parse_args())
 
 
 DEBITACC = args['debitacc']
-CSVDIR = args['csvdir']
+CSVDIR = args['dir']
 max_amount = args['max']
 min_amount = args['min']
 
