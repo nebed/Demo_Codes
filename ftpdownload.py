@@ -29,21 +29,21 @@ DESTINATION = ['dest']
 
 
 #function to download files from ftp server
-def downloadFiles(file):
-    if(file.lower().endswith(('.csv'))):
+def downloadFiles(filename):
+    if(filename.lower().endswith(('.csv'))):
         try:
-            ftp.retrbinary("RETR " + file, open(os.path.join(DESTINATION, file + '.proc'),"wb").write)
-            print("Downloaded: " + file)
+            ftp.retrbinary("RETR " + filename, open(os.path.join(DESTINATION, filename + '.proc'),"wb").write)
+            print("Downloaded: " + filename)
             #rename processed file
-            os.rename(file+'.proc', file)
+            os.rename(filename+'.proc', filename)
             try:
-                ftp.delete(file)
+                ftp.delete(filename)
             except ftplib.error_perm:
-                print("Error: could not delete " + file)
+                print("Error: could not delete " + filename)
             except ftplib.error_reply:
-                print("Error: could not delete " + file)
+                print("Error: could not delete " + filename)
         except:
-            print("Error: File could not be downloaded " + file)
+            print("Error: File could not be downloaded " + filename)
         return
 
 
