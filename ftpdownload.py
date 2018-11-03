@@ -22,10 +22,10 @@ ap.add_argument("-o", "--dest", required=True,
 args = vars(ap.parse_args())
 
 server = args['fserver']
-user = ['user']
-password = ['pass']
-source = ['source']
-DESTINATION = ['dest']
+user = args['user']
+password = args['pass']
+source = args['source']
+DESTINATION = args['dest']
 
 
 #function to download files from ftp server
